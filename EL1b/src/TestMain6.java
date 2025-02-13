@@ -1,4 +1,4 @@
-import es.uah.matcomp.mp.e1.MyPoint6;
+import es.uah.matcomp.mp.e1.MyPoint;
 
 public class TestMain6 {
     public static void main(String[] args) {
