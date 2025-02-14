@@ -1,40 +1,59 @@
+package es.uah.matcomp.mp.e1;
+
+import es.uah.matcomp.mp.e1.CustomerBarney;
+
 public class Invoice {
     private int id;
-    private Customer customer;
+    private CustomerBarney customer;
     private double amount;
 
-    public Invoice(int id, Customer customer, double amount) {
+    public Invoice(int id, CustomerBarney customer, double amount) {
         this.id = id;
-        this.Customer = customer;
+        this.customer = customer;
         this.amount = amount;
     }
+
     public int getId() {
         return id;
     }
-    public Customer getCustomer() {
+
+    public CustomerBarney getCustomer() {
         return customer;
     }
-    public void setCustomer(Customer customer) {
+
+    public void setCustomer(CustomerBarney customer) {
         this.customer = customer;
     }
+
     public double getAmount() {
         return amount;
     }
+
     public void setAmound(double amount) {
-        this.amount = amount
+        this.amount = amount;
     }
+
     public int getCustomerId() {
-        return customerId;
+        return id;
     }
-    public int getCustomerName() {
-        return customerName;
+
+    public String getCustomerName() {
+        return customer.getName();
     }
+
     public int getCustomerDiscount() {
-        return customerDiscount;
+        return customer.getDiscount();
     }
+
     public double getAmountAfterDiscount() {
         return amount * (1 - (customer.getDiscount() / 100.0));
     }
+
     public String toString() {
         return "Invoice[id=" + id + ", customer=" + customer.toString() + ", amount=" + amount + "]";
     }
+
+    public void setAmount(double v) {
+        amount = v;
+    }
+}

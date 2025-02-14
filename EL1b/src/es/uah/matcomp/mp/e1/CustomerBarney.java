@@ -1,3 +1,5 @@
+package es.uah.matcomp.mp.e1;
+
     public class CustomerBarney {
         private int id;
         private String name;
@@ -23,4 +25,8 @@
     public String toString() {
         return "Customer[id=" + id + ",name=" + name + ",discount=" + discount + "]";
     }
-}
+
+        public void setDiscount(int i) {
+        this.discount = i;
+        }
+    }
