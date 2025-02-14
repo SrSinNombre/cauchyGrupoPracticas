@@ -1,9 +1,9 @@
-import es.uah.matcomp.mp.e1.MyPoint6;
+import es.uah.matcomp.mp.e1.MyPoint;
 
 public class TestMain6 {
     public static void main(String[] args) {
         // Test program to test all constructors and public methods
-        MyPoint6 p1 = new MyPoint6(); // Test constructor
+        MyPoint p1 = new MyPoint(); // Test constructor
         System.out.println(p1); // Test toString()
         p1.setX(8); // Test setters
         p1.setY(6);
@@ -13,7 +13,7 @@ public class TestMain6 {
         System.out.println(p1.getXY()[0]); // Test getXY()
         System.out.println(p1.getXY()[1]);
         System.out.println(p1);
-        MyPoint6 p2 = new MyPoint6(0, 4); // Test another constructor
+        MyPoint p2 = new MyPoint(0, 4); // Test another constructor
         System.out.println(p2);
 // Testing the overloaded methods distance()
         System.out.println(p1.distance(p2)); // which version?
