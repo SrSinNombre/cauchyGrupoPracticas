@@ -1,3 +1,6 @@
+import es.uah.matcomp.mp.e1.Author;
+import es.uah.matcomp.mp.e1.Book;
+
 public class TestMain3 {
     public static void main(String[] args) {
         Author a1 = new Author("Tan Ah Teck", "ahteck@nowhere.com");

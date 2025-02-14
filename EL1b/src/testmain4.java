@@ -1,7 +1,10 @@
+import es.uah.matcomp.mp.e1.CustomerBarney;
+import es.uah.matcomp.mp.e1.Invoice;
+
 public class testmain4 {
     public static void main(String[] args) {
 // Test Customer class
-        Customer c1 = new Customer(88, "Tan Ah Teck", 10);
+        CustomerBarney c1 = new CustomerBarney(88, "Tan Ah Teck", 10);
         System.out.println(c1); // Customer's toString()
         c1.setDiscount(8);
         System.out.println(c1);

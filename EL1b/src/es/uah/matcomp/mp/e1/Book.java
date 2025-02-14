@@ -1,3 +1,5 @@
+package es.uah.matcomp.mp.e1;
+
 public class Book {
     private String isbn;
     private String name;
@@ -45,10 +47,4 @@ public class Book {
     public String toString() {
         return "Book[isbn=" + isbn + ",name=" + name + ",author=" + author + ",price=" + price + ",qty=" + qty + "]";
     }
-}
-
-
-
-
-
 }
