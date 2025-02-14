@@ -1,3 +1,5 @@
+package es.uah.matcomp.mp.e1;
+
 public class Author {
     private String name;
     private String email;

@@ -1,5 +1,5 @@
-import es.uah.matcomp.mp.e1.ejerciciosclases.Account;
-import es.uah.matcomp.mp.e1.ejerciciosclases.Customer;
+import es.uah.matcomp.mp.e1.Account;
+import es.uah.matcomp.mp.e1.Customer;
 
 public class TestMain5 {
     public static void main(String[] args) {
