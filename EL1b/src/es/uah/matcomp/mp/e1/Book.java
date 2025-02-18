@@ -11,13 +11,13 @@ public class Book {
     public Book(String isbn, String name, Author author, double price) {
         this.isbn = isbn;
         this.name = name;
-        this.Author = author;
+        this.author = author;
         this.price = price;
     }
     public Book(String isbn, String name, Author author, double price, int qty) {
         this.isbn = isbn;
         this.name = name;
-        this.Author = author;
+        this.author = author;
         this.price = price;
         this.qty = qty;
     }
