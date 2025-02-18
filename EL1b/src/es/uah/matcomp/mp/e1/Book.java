@@ -1,4 +1,5 @@
 package es.uah.matcomp.mp.e1;
+import es.uah.matcomp.mp.e1.Author;
 
 public class Book {
     private String isbn;
