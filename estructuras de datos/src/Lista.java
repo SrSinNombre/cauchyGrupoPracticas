@@ -4,3 +4,4 @@ public interface Lista<T> {
     Iterador<T> getIterador();
     int getNumElementos();
 }
+//

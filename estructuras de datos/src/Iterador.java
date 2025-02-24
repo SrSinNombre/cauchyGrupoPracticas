@@ -3,3 +3,4 @@ public interface Iterador<T> {
     T next();
     void delete();
 }
+//
