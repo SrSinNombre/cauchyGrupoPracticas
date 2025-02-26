@@ -46,4 +46,7 @@ public class ListaBasica<T> implements Lista<T> {
             maxElementos *= 2;
         }
     }
+    public boolean estaVacia(){
+        return numElementos == 0;
+    }
 }
