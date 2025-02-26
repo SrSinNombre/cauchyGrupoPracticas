@@ -1,34 +1,49 @@
-public class ListaBasica<T> {
+public class ListaBasica<T> implements Lista<T> {
 
-    private T[] array;
-    private int T_Max;
+    T[] array;
+    int numElementos;
+    int maxElementos; //numElementos <= maxElementos SIEMPRE
 
-    public ListaBasica(int capacidad) {
-        this.T_Max = capacidad;
-        this.array = (T[]) new Object[T_Max];
+    public ListaBasica(int maxElementos) {
+        this.maxElementos = maxElementos;
+        numElementos = 0;
+        this.array = (T[]) new Object[numElementos];
+    }
+    @Override
+    public int getNumElementos(){
+        return numElementos;
+    }
+    @Override
+    public boolean add(T elemento){ //añade el elemento al final de la lista
+        array[numElementos] = elemento;
+        return true;
     }
 
-
-    public void setElemento(int indice, T e) {
-        if (indice >= 0 && indice < T_Max) {
-            array[indice] = e;
-        } else {
-            System.out.println("Índice fuera de rango.");
-        }
-    }
-
-    public T getElemento(int indice) {
-        if (indice >= 0 && indice < T_Max) {
-            return array[indice];
-        }
-        return null;
-    }
-
-    public void mostrarElementos() {
-        for (T e : array) {
-            if (e != null) {
-                System.out.println(e.toString());
+    @Override
+    public boolean delete(T elemento) {
+        T cabeza = array[0];
+        for(int i = 1; cabeza != elemento; i++){
+            cabeza = array[i];
+            if (i == numElementos){
+                System.out.println("El elemento no está en la lista");
+                return false;
             }
+            cabeza = null;
+            for (int j = numElementos - 1; array[j] == null; j--){
+                array[j-1] = array[j];
+            }
+            numElementos -= 1;
+        }
+        return true;
+    }
+    @Override
+    public Iterador<T> getIterador() {
+        return new IteradorListaBasica<T>();
+    }
+
+    public void aumentarT(){
+        if(numElementos == maxElementos){
+            maxElementos *= 2;
         }
     }
 }
