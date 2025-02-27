@@ -17,7 +17,8 @@ public class IteradorListaBasica<T> implements Iterador<T> {
         return siguiente;
     }
     @Override
-    public void delete(){
+    public void delete(){ //una vez he accedido al elemento en contador,
+                            // desplaza todos los elementos de la lista a la izquierda para acceder al siguiente elemento
         for(int i = contador; i < numElementos - 1; i--) {
             array[i] = array[i+1];
         }

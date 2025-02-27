@@ -49,4 +49,41 @@ public class ListaBasica<T> implements Lista<T> {
     public boolean estaVacia(){
         return numElementos == 0;
     }
+    public ListaBasica<T> reverse(){
+        ListaBasica<T> array_aux = new ListaBasica<>(maxElementos);
+        for(int i = numElementos - 1; i <= 0; i++){
+            array_aux.add(array[i]);
+        }
+        return array_aux;
+    }
+    public Object buscar(T elemento){
+        IteradorListaBasica<T> it = new IteradorListaBasica<>();
+        while(it.hasNext() && array[it.contador] != elemento){
+            it.next();
+        }
+        if(!it.hasNext()){
+            System.out.println("El elemento no está en la lista");
+            return null;
+        }else{
+            return it.contador;
+        }
+    }
+    public void sumar(ListaBasica<T> otraLista){
+        while(maxElementos < numElementos + otraLista.numElementos){
+            aumentarT();
+        }
+        IteradorListaBasica<T> it = new IteradorListaBasica<>();
+        for(int i = 0; i < otraLista.numElementos; i++){
+            add(otraLista.array[i]);
+        }
+    }
+    public boolean setElemento(int indice, T elemento){
+        if(indice >= numElementos){
+            System.out.println("El índice no es válido.");
+            return false;
+        }else{
+            array[indice] = elemento;
+            return true;
+        }
+    }
 }
