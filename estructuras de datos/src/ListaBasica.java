@@ -38,7 +38,7 @@ public class ListaBasica<T> implements Lista<T> {
     }
     @Override
     public Iterador<T> getIterador() {
-        return new IteradorListaBasica<T>();
+        return new IteradorListaBasica<>();
     }
 
     public void aumentarT(){
