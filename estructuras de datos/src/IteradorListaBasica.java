@@ -17,10 +17,11 @@ public class IteradorListaBasica<T> implements Iterador<T> {
         return siguiente;
     }
     @Override
-    public void delete(){ //una vez he accedido al elemento en contador,
-                            // desplaza todos los elementos de la lista a la izquierda para acceder al siguiente elemento
-        for(int i = contador; i < numElementos - 1; i--) {
+    public void delete(){ //elimina el último elemento retornado por next()
+        int i = contador;
+        while (i < numElementos - 1) {
             array[i] = array[i+1];
+            i++;
         }
         numElementos -= 1;
         contador -= 1;

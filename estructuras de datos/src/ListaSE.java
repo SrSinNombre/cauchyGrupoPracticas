@@ -1,9 +1,15 @@
 public class ListaSE<T> implements Lista<T>{
-    Elemento<T> cabeza;
+    private Elemento<T> cabeza;
 
     public ListaSE(){
-        this.cabeza = null;
-        }
+        this.cabeza = getCabeza();
+    }
+    public ListaSE(Elemento<T> cabeza){
+        this.cabeza = cabeza;
+    }
+    public Elemento<T> getCabeza(){
+        return cabeza;
+    }
     @Override
     public boolean add(T elemento){
         Elemento<T> nuevoElemento = new Elemento<>(elemento);
@@ -13,7 +19,6 @@ public class ListaSE<T> implements Lista<T>{
         cabeza = nuevoElemento;
         return true;
     }
-
     @Override
     public boolean delete(T elemento) {
         Elemento<T> nuevoElemento = new Elemento<>(elemento);
@@ -45,11 +50,10 @@ public class ListaSE<T> implements Lista<T>{
     public Iterador<T> getIterador(){
         return new IteradorListaSE<>();
     }
+
     public void imprimir(){
-        Iterador<T> it = new IteradorListaSE<>();
-        System.out.print(cabeza.getDato() + " -> ");
-        while(it.hasNext()){
-            System.out.print(it.next() + " -> ");
+        while(getIterador().hasNext()){
+            System.out.print(getIterador().next() + " -> ");
         }
     }
 }
