@@ -48,7 +48,7 @@ public class ListaSE<T> implements Lista<T>{
     }
     @Override
     public Iterador<T> getIterador(){
-        return new IteradorListaSE<>();
+        return new IteradorListaSE<>(cabeza);
     }
 
     public void imprimir(){

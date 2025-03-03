@@ -3,8 +3,8 @@ public class IteradorListaSE<T> implements Iterador<T>{
     ListaSE<T> lista;
     Elemento<T> output; // almacena la salida de next()
 
-    public IteradorListaSE(){
-        this.puntero = lista.getCabeza();
+    public IteradorListaSE(Elemento<T> cabeza){
+        this.puntero = cabeza;
         this.output = null;
     }
 
