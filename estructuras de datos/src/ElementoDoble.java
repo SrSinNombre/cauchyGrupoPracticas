@@ -1,21 +1,33 @@
-public class ElementoDoble<T> {
+public class ElementoDoble<T> extends Elemento<T>{
     private T dato;
-    private Elemento<T> anterior;
-    private Elemento<T> siguiente;
+    private ElementoDoble<T> anterior;
+    private ElementoDoble<T> siguiente;
 
     public ElementoDoble(T dato){
-        this.dato = dato;
-        anterior = null;
-        siguiente = null;
+        super(dato);
+        this.anterior = null;
+        this.siguiente = null;
     }
+    @Override
     public T getDato(){
         return dato;
     }
-    public Elemento<T> getSiguiente(){
+    @Override
+    public ElementoDoble<T> getSiguiente(){
         return siguiente;
     }
-    public Elemento<T> getAnterior(){
+    public ElementoDoble<T> getAnterior(){
         return anterior;
     }
-
+    @Override
+    public void setDato(T dato) {
+        this.dato = dato;
+    }
+    @Override
+    public void setSiguiente(Elemento<T> siguiente) {
+        super.setSiguiente(siguiente);
+    }
+    public void setAnterior(ElementoDoble<T> anterior) {
+        this.anterior = anterior;
+    }
 }
