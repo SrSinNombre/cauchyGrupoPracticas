@@ -2,7 +2,7 @@ public class ListaSE<T> implements Lista<T>{
     private Elemento<T> cabeza;
 
     public ListaSE(){
-        this.cabeza = getCabeza();
+        this.cabeza = null;
     }
     public ListaSE(Elemento<T> cabeza){
         this.cabeza = cabeza;
@@ -28,11 +28,12 @@ public class ListaSE<T> implements Lista<T>{
         }
         else{
             Elemento<T> actual = cabeza;
-            while(actual != nuevoElemento){
+            while(actual.getSiguiente() != nuevoElemento){
                 actual = actual.getSiguiente();
             }
-            while(actual != null){
-                actual = actual.getSiguiente();
+            Elemento<T> siguiente = actual.getSiguiente();
+            while(siguiente.getSiguiente() != null){
+                siguiente = siguiente.getSiguiente();
             }
             return true;
         }
