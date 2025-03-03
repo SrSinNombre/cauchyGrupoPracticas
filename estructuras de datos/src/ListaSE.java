@@ -22,7 +22,7 @@ public class ListaSE<T> implements Lista<T>{
     @Override
     public boolean delete(T elemento) {
         Elemento<T> nuevoElemento = new Elemento<>(elemento);
-        if(cabeza == null){
+        if(estaVacia()){
             System.out.println("la lista está vacía.");
             return false;
         }
@@ -55,5 +55,8 @@ public class ListaSE<T> implements Lista<T>{
         while(getIterador().hasNext()){
             System.out.print(getIterador().next() + " -> ");
         }
+    }
+    public boolean estaVacia(){
+        return cabeza == null;
     }
 }
