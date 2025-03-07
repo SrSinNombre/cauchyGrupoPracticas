@@ -10,7 +10,7 @@ public class IteradorListaSE<T> implements Iterador<T>{
 
     @Override
     public boolean hasNext(){
-        return puntero != null;
+        return puntero.getSiguiente() != null;
     }
     @Override
     public T next(){
