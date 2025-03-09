@@ -1,21 +1,25 @@
-public class Pila<T> {
-    private ListaSE<T> lista;
+public class Pila<T> extends ListaSE<T>{
+    private Elemento<T> cabeza;
 
     public Pila() {
-        this.lista = new ListaSE<>();
+        super();
     }
 
     public void push(T elemento) {
-        lista.agregarAlInicio(elemento);
+        add(elemento);
     }
 
     public T pop() {
-        if (lista.estaVacia()) {
-            throw new IllegalStateException("La pila está vacía");
+        if (estaVacia()) {
+            System.out.println("La pila está vacía");
+            return null;
         }
-        return lista.quitarDelInicio();
-    }
-    public boolean estaVacia() {
-        return lista.estaVacia();
+        Elemento<T> actual = cabeza;
+        while(actual.getSiguiente() != null){
+            actual = actual.getSiguiente();
+        }
+        T dato = actual.getDato();
+        delete(actual.getDato());
+        return dato;
     }
 }
