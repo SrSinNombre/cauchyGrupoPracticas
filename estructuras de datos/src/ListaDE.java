@@ -1,4 +1,6 @@
-public class ListaDE<T> implements Lista<T>{
+import java.util.List;
+
+public class ListaDE<T> implements Lista<T>, List<T> {
     private ElementoDoble<T> cabeza;
     private ElementoDoble<T> cola;
 

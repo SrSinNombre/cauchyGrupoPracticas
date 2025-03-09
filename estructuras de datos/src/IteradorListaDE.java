@@ -48,4 +48,9 @@ public class IteradorListaDE<T> implements Iterador<T>{
             }
         }
     }
+
+    @Override
+    public void remove() {
+
+    }
 }
