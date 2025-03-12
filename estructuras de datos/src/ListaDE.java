@@ -83,4 +83,17 @@ public class ListaDE<T> implements Lista<T>, List<T> {
             return estaVacia();
         }
     }
+    public void imprimir(){
+        ElementoDoble<T> actual = cabeza;
+        while(actual != cola){
+            System.out.print(actual.getDato() + " <-> ");
+            actual = actual.getSiguiente();
+        }
+        System.out.print(actual.getDato());
+    }
+    public void reverse(){
+        ElementoDoble<T> aux = cabeza;
+        cabeza = cola;
+        cola = aux;
+    }
 }

@@ -8,8 +8,11 @@ public class IteradorListaDE<T> implements Iterador<T>{
     }
     @Override
     public boolean hasNext() {
-        return puntero != null;
+        return puntero.getSiguiente() != null;
     }
+    public boolean hasPrevious(){
+        return puntero.getAnterior() != null;
+    } // tiene sentido hacer métodos previous y hasPrevious porque la lista se puede recorrer en ambos sentidos
     @Override
     public T next(){
         if(!hasNext()){
@@ -19,6 +22,16 @@ public class IteradorListaDE<T> implements Iterador<T>{
         else{
             output = puntero.getSiguiente();
             puntero = puntero.getSiguiente();
+            return output.getDato();
+        }
+    }
+    public T previous(){
+        if(!hasPrevious()){
+            System.out.println("No hay elemento anterior");
+            return null;
+        }else{
+            output = puntero.getAnterior();
+            puntero = puntero.getAnterior();
             return output.getDato();
         }
     }
