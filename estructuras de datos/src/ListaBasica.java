@@ -51,7 +51,7 @@ public class ListaBasica<T> implements Lista<T> {
     }
     public ListaBasica<T> reverse(){
         ListaBasica<T> array_aux = new ListaBasica<>(maxElementos);
-        for(int i = numElementos - 1; i <= 0; i++){
+        for(int i = numElementos - 1; i >= 0; i--){
             array_aux.add(array[i]);
         }
         return array_aux;
