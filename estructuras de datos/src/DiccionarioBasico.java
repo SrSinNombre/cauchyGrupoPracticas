@@ -11,7 +11,7 @@ public class DiccionarioBasico<K, V> {
 
     public V obtener(K clave) {
         for (Diccionario<K, V> elemento : lista) {
-            if (elemento.getClave().equals(clave)) {
+            if (elemento.getClave() == clave) {
                 return elemento.getValor();
             }
         }
