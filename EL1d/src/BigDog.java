@@ -3,12 +3,12 @@ public class BigDog extends Dog {
         super(name);
     }
     public void greets(){
-        System.out.println("Wooow")
+        System.out.println("Wooow");
     }
     public void greets(Dog another){
-        System.out.println("Wooooow")
+        System.out.println("Wooooow");
     }
     public void greets(BigDog another){
-        System.out.println("Wooooo0oow")
+        System.out.println("Wooooo0oow");
     }
 }
