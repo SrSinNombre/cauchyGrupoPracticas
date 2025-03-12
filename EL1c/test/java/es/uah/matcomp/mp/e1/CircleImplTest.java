@@ -4,12 +4,12 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class CircleTest {
-    private Circle circle;
+public class CircleImplTest {
+    private CircleImpl circle;
 
     @BeforeEach
     public void setUp() {
-        circle = new Circle(2.0, "blue");
+        circle = new CircleImpl(2.0, "blue", true);
     }
 
     @Test
@@ -24,6 +24,22 @@ public class CircleTest {
     }
 
     @Test
+    public void testGetArea() {
+        assertEquals(Math.PI * 9, circle.getArea());
+    }
+
+    @Test
+    public void testGetPerimeter() {
+        assertEquals(2 * Math.PI * 3, circle.getPerimeter());
+    }
+
+    @Test
+    public void testToString() {
+        String expected = "Circle[]Shape[color=blue,filled=true,radius=2.000000]";
+        assertEquals(expected, circle.toString());
+    }
+
+    @Test
     public void testGetColor() {
         assertEquals("blue", circle.getColor());
     }
@@ -35,13 +51,13 @@ public class CircleTest {
     }
 
     @Test
-    public void testGetArea() {
-        assertEquals(Math.PI * 4, circle.getArea());
+    public void testIsFilled() {
+        assertTrue(circle.isFilled());
     }
 
     @Test
-    public void testToString() {
-        String expected = "Circle [radius=2.0,color=blue]";
-        assertEquals(expected, circle.toString());
+    public void testSetFilled() {
+        circle.setFilled(false);
+        assertFalse(circle.isFilled());
     }
 }
