@@ -48,4 +48,8 @@ public class Book {
     public String toString() {
         return "Book[isbn=" + isbn + ",name=" + name + ",author=" + author + ",price=" + price + ",qty=" + qty + "]";
     }
+
+    public void setQty(int i) {
+        this.qty = i;
+    }
 }

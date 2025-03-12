@@ -3,7 +3,7 @@ import es.uah.matcomp.mp.e1.Book;
 
 public class TestMain3 {
     public static void main(String[] args) {
-        Author a1 = new Author("Tan Ah Teck", "ahteck@nowhere.com");
+        Author a1 = new Author("Tan Ah Teck", "ahteck@nowhere.com", 'm');
         System.out.println(a1);
         a1.setEmail("ahteck@somewhere.com");
         System.out.println(a1);
